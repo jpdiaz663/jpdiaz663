@@ -1,0 +1,65 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+}
+
+/*.wrapper {
+    @apply m-8;
+}*/
+
+.card-projects {
+  @apply flex flex-row flex-nowrap items-center justify-center; gap: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20%;
+    gap: 1rem;
+    background-color: rgba(15, 15, 15, 0.8);
+    border-bottom: 1px solid #262626;
+    margin: auto auto;
+    position: sticky;
+
+  .navbar__links {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    color: #dfdfd6;
+
+  }
+
+}
+
+
+.card-image {
+  @apply flex flex-col ;
+
+  :hover {
+    zoom: 105%;
+  }
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+
+
+ 
+}
+
+.card-summary {
+    color: #676666;
+}
+
+.links {
+  @apply flex flex-row ;
+  gap: calc(var(--spacing) *2);
+  justify-content: center;
+}
