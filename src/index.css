@@ -380,6 +380,11 @@ a {
     text-decoration: none;
 }
 
+
+.text--semibold {
+    font-weight: 600;
+  }
+
 @layer utilities {
     @keyframes blink {
       0%,

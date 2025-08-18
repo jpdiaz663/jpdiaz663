@@ -28,7 +28,7 @@ const Home = () => {
             <section className="text-center py-20 text-white">
                 <h1 className="text-4xl font-bold mb-4">Hola, soy Juan Diaz <span className="text-yellow-300">Desarrollador Web</span></h1>
                 <p className="text-lg mb-6">Especialista en Drupal, Backend y soluciones web modernas.</p>
-                <p className="text-xl mb-6">Te ayudo duplicar tus ventas y ahorrar dinero con sistemas de gestión de IA - Webs & SEO 💸</p>
+                <p className="text--semibold mb-6">Te ayudo duplicar tus ventas y ahorrar dinero con sistemas de gestión de IA - Webs & SEO 💸</p>
                 <div className='links'>
                     <a href="https://folll.io/juanpablod%C3%ADazalbarracin/resume" target='_blank' className="bg-orange-300  text-gray-900 px-6 py-3 rounded-sm font-semibold shadow hover:bg-yellow-400 transition">Sobre Mí</a>
                     <a href="#projects" className="bg-yellow-300 text-gray-900 px-6 py-3 rounded-sm font-semibold shadow hover:bg-yellow-400 transition">Ver mis proyectos</a>
