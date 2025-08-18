@@ -58,13 +58,14 @@ const Home = () => {
           <div className="flex flex-wrap justify-center gap-2 p-4">
             {[
               "Java",
+              "Nodejs",
+              "Reactjs",
               "PHP",
               "Symfony",
               "JavaScript",
-              "ddd",
-              "drupal",
-              "sql",
-              "Spring Boot",
+              "DDD",
+              "Drupal",
+              "Sql",
             ].map((skill) => (
               <div
                 key={skill}
@@ -79,7 +80,7 @@ const Home = () => {
 
         {tab === "hobbies" && (
           <div className="flex flex-wrap justify-center gap-2 p-4">
-            {["Ping pong", "futbol"].map((hobby) => (
+            {["Ping pong", "Futbol"].map((hobby) => (
               <div
                 key={hobby}
                 className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
@@ -93,10 +94,15 @@ const Home = () => {
 
         {tab === "stack" && (
           <div className="flex flex-wrap justify-center gap-2 p-4">
-            <div className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
-              border rounded-full border-slate-900 hover:bg-mystic hover:text-slate-900">
-              Software
-            </div>
+           {["Software", "Ciberseguridad", "Frameworks", "IA"].map((hobby) => (
+              <div
+                key={hobby}
+                className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
+                border rounded-full border-slate-900 hover:bg-mystic hover:text-slate-900"
+              >
+                {hobby}
+              </div>
+            ))}
           </div>
         )}
       </div>

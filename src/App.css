@@ -63,3 +63,8 @@ img {
   gap: calc(var(--spacing) *2);
   justify-content: center;
 }
+
+
+.text-theme-blue {
+  color: #4CC6FF
+}
