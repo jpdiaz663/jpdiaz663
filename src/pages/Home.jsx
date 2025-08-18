@@ -40,7 +40,7 @@ const Home = () => {
         >
         {/* Tabs header */}
         <div className="flex items-center justify-between">
-          {["skills", "hobbies", "stack"].map((item) => (
+          {["skills", "stack", "hobbies"].map((item) => (
             <div
               key={item}
               onClick={() => setTab(item)}
