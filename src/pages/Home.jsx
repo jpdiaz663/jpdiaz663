@@ -4,13 +4,18 @@ import Card from '../components/card.jsx';
 import Projects from './Projects.jsx';
 import {projectsapi} from "../api/projects.js";
 import dataMock from '../api/data-projects.json';
+import { LoadingScreen } from "../components/LoadingScreen";
 
 const Home = () => {
     const [projects, setProjects] = useState({})
     const [tab, setTab] = useState("skills");
+
+    /** loaded function */
+    const [isLoaded, setIsLoaded] = useState(false);
+
     useEffect(() => {
       const fetchProjects = async () => {
-      //  const data = await projectsapi();
+      //const data = await projectsapi();
         setProjects(dataMock);
       };
       fetchProjects();
@@ -18,8 +23,9 @@ const Home = () => {
 
     return (
         <>
+          {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
            <Navbar/>
-            <section className="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+            <section className="text-center py-20 text-white">
                 <h1 className="text-4xl font-bold mb-4">Hola, soy Juan Diaz <span className="text-yellow-300">Desarrollador Web</span></h1>
                 <p className="text-lg mb-6">Especialista en Drupal, Backend y soluciones web modernas.</p>
                 <div className='links'>
