@@ -140,7 +140,7 @@ const Home = () => {
                 </div>
                 <div>
                 <p className="font-semibold">📧 Correo:</p>
-                <a href="jpdiaz663@hotmail.com" className="text-blue-400 hover:underline">
+                <a href="mailto:jpdiaz663@hotmail.com" className="text-blue-400 hover:underline">
                     jpdiaz663@hotmail.com
                 </a>
                 </div>
