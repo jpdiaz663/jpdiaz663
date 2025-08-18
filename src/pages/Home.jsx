@@ -35,9 +35,8 @@ const Home = () => {
                 </div>
             </section>
                 
-            <div className="w-full sm:mb-8">
-        <div
-            className={`flex flex-col border border-slate-900 transition-opacity duration-500`}
+    <div className="w-full sm:mb-8">
+      <div className={`flex flex-col border border-white/10 duration-500`}
         >
         {/* Tabs header */}
         <div className="flex items-center justify-between">
@@ -78,20 +77,6 @@ const Home = () => {
           </div>
         )}
 
-        {tab === "hobbies" && (
-          <div className="flex flex-wrap justify-center gap-2 p-4">
-            {["Ping pong", "Futbol"].map((hobby) => (
-              <div
-                key={hobby}
-                className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
-                border rounded-full border-slate-900 hover:bg-mystic hover:text-slate-900"
-              >
-                {hobby}
-              </div>
-            ))}
-          </div>
-        )}
-
         {tab === "stack" && (
           <div className="flex flex-wrap justify-center gap-2 p-4">
            {["Software", "Ciberseguridad", "Frameworks", "IA"].map((hobby) => (
@@ -105,7 +90,21 @@ const Home = () => {
             ))}
           </div>
         )}
-      </div>
+        
+        {tab === "hobbies" && (
+          <div className="flex flex-wrap justify-center gap-2 p-4">
+            {["Ping Pong", "Futbol"].map((hobby) => (
+              <div
+                key={hobby}
+                className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
+                border rounded-full border-slate-900 hover:bg-mystic hover:text-slate-900"
+              >
+                {hobby}
+              </div>
+            ))}
+          </div>
+        )}
+        </div>
       </div>
           <section id="projects" className="wrapper">
               <div className='p-5 text-center text-white'>
