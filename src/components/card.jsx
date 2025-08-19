@@ -3,7 +3,7 @@ import React from "react";
 const Card = ({ key, title, link, image = null, content}) => {
     image ??= 'https://i.ibb.co/TLr4LbN/waterbottle.png';
     return (
-        <a target="_blank" href={link} className="card-image w-72 rounded-3xl backdrop-blur-xl bg-white/10 border border-white/20 text-white p-4 shadow-2xl">
+        <a target="_blank" href={link} className="card-image w-72 rounded-3xl backdrop-blur-xl bg-white/10 text-white p-4 shadow-2xl">
             <div >
                 <img
                     src={image}
