@@ -68,8 +68,12 @@ const Home = () => {
             ].map((skill) => (
               <div
                 key={skill}
-                className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
-                border rounded-full border-slate-900 hover:bg-mystic hover:text-slate-900"
+                className="bg-blue-500/10 text-blue-500 py-1 px-3 
+                rounded-full text-sm
+                transition
+                hover:bg-blue-500/20 hover:-translate-y-0.5
+                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
+                  "
               >
                 {skill}
               </div>
@@ -82,8 +86,11 @@ const Home = () => {
            {["Software", "Ciberseguridad", "Frameworks", "IA"].map((hobby) => (
               <div
                 key={hobby}
-                className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
-                border rounded-full border-slate-900 hover:bg-mystic hover:text-slate-900"
+                className="bg-blue-500/10 text-blue-500 py-1 px-3 
+                rounded-full text-sm
+                transition
+                hover:bg-blue-500/20 hover:-translate-y-0.5
+                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
               >
                 {hobby}
               </div>
@@ -96,8 +103,11 @@ const Home = () => {
             {["Ping Pong", "Futbol"].map((hobby) => (
               <div
                 key={hobby}
-                className="p-2 px-4 text-gray-900 capitalize duration-200 transform bg-gray-100 
-                border rounded-full border-slate-900 hover:bg-mystic hover:text-slate-900"
+                className="bg-blue-500/10 text-blue-500 py-1 px-3 
+                rounded-full text-sm
+                transition
+                hover:bg-blue-500/20 hover:-translate-y-0.5
+                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
               >
                 {hobby}
               </div>
