@@ -125,8 +125,8 @@ const Home = () => {
               </div>
           </section>
 
-        <section id="contact" className="bg-gray-900 text-white my-16 py-16">
-        <div className="max-w-4xl mx-auto px-6">
+        <section id="contact" className="bg-gray-900 text-white mt-16 py-16">
+        <div className="max-w-4xl mx-auto p-6 rounded-sm border border-cyan-900">
 
             <h2 className="text-3xl font-bold mb-8 text-center">Contáctame</h2>
 
