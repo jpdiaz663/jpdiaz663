@@ -22,7 +22,7 @@ const Navbar = () => {
 
         {/* Links desktop */}
         <ul className="hidden md:flex gap-8 text-gray-200 font-mono">
-          <li><a href="#home" className="hover:text-yellow-400">Inicio</a></li>
+          <li><a href="/" className="hover:text-yellow-400">Inicio</a></li>
           <li><a href="https://folll.io/juanpablod%C3%ADazalbarracin/resume" target="_blank" className="hover:text-yellow-400">Sobre Mí</a></li>
           <li><a href="#contact" className="hover:text-yellow-400">Contáctame</a></li>
         </ul>

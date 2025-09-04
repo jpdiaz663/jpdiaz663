@@ -1,0 +1,72 @@
+
+
+.container-about {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.container-about .description {
+    flex: 1 1;
+    min-width: 280px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.container-about .description .content {
+    padding: 0 5%;
+    position: relative;
+    z-index: 2;
+}
+
+.container-about .about-career {
+  grid-gap: 1rem;
+  display: grid;
+  flex: 1 1;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  min-width: 280px;
+
+}
+
+.box {
+    color: #dfdfd6;
+    background-color: #1b1b1b;
+    background: linear-gradient(306.77deg,#060b21 75.7%,#0e142f 97.33%);
+    border: 1px solid #0000;
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+
+    font-size: 14px;
+    padding: 1.5rem 1rem;
+    transition-duration: .3s;
+    transition-property: all;
+  
+    font-weight: 300;
+}
+
+
+/*
+.box:hover {
+    background: linear-gradient(306.77deg, #060b21 75.7%, #0e142f 97.33%);
+    box-shadow: inset 0px 0px 30px 2px rgba(170, 46, 255, 0.29);
+    border: 1px solid #e3c4f826;
+}*/
+
+.box:hover {
+    background: linear-gradient(306.77deg, #060b21 75.7%, #0e142f 97.33%);
+  box-shadow: inset 0px 0px 30px 2px rgba(190, 101, 45, 0.61); /* naranja futurista */
+  border: 1px solid #e3c4f826;
+}
+
+
+.box h3 {
+    margin-bottom: .5rem;
+  }

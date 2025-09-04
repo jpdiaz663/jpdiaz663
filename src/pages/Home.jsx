@@ -5,13 +5,29 @@ import Projects from './Projects.jsx';
 import {projectsapi} from "../api/projects.js";
 import dataMock from '../api/data-projects.json';
 import { LoadingScreen } from "../components/LoadingScreen";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPhp, SiMysql } from 'react-icons/si';
+import {LogoLoop} from '../components/LogoLoop.jsx'
+import AboutMe from '../components/AboutMe.jsx';
 
 const Home = () => {
     const [projects, setProjects] = useState({})
-    const [tab, setTab] = useState("skills");
 
     /** loaded function */
     const [isLoaded, setIsLoaded] = useState(false);
+
+
+    /** Lopop tech */
+
+    const techLogos = [
+
+      { node: <SiPhp />, title: "Php", href: "https://php.net" },
+      { node: <SiMysql />, title: "Mysql", href: "https://www.mysql.com" },
+    
+      { node: <SiReact />, title: "React", href: "https://react.dev" },
+
+      { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+    
+    ];
 
     useEffect(() => {
       const fetchProjects = async () => {
@@ -23,101 +39,53 @@ const Home = () => {
 
     return (
         <>
-          {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
-           <Navbar/>
-            <section className="text-center py-20 text-white">
-                <h1 className="text-4xl font-bold mb-4">Hola, soy Juan Diaz <span className="text-yellow-300">Desarrollador Web</span></h1>
-                <h2 className="text-lg mb-6">Especialista en Drupal, Backend, Ciberseguridad y soluciones web modernas.</h2>
-                <p className="text--semibold mb-6">Te ayudo duplicar tus ventas y ahorrar dinero con sistemas de gestión de IA - Webs & SEO 💸</p>
-                <div className='links'>
-                    <a href="https://folll.io/juanpablod%C3%ADazalbarracin/resume" target='_blank' className="bg-orange-300  text-gray-900 px-6 py-3 rounded-sm font-semibold shadow hover:bg-yellow-400 transition">Sobre Mí</a>
-                    <a href="#projects" className="bg-yellow-300 text-gray-900 px-6 py-3 rounded-sm font-semibold shadow hover:bg-yellow-400 transition">Ver mis proyectos</a>
-                </div>
-            </section>
+    {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
+      <Navbar/>
+      <section className="text-center py-20 bg-gradient-to-r text-white">
+          <h1 className="text-4xl font-bold mb-4">Hola, soy Juan Diaz <span className="text-yellow-300">Desarrollador Web</span></h1>
+          <p className="text-lg mb-6">Especialista en Drupal, Backend y soluciones web modernas.</p>
+          <div className='links'>
+              <a href="https://folll.io/juanpablod%C3%ADazalbarracin/resume" target='_blank' className="jp-secundary-button">Sobre Mí</a>
+              <a href="#projects" className="jp-primary-button">Ver mis proyectos</a>
+          </div>
+      </section>
                 
-    <div className="w-full sm:mb-8">
-      <div className={`flex flex-col border border-white/10 duration-500`}
-        >
-        {/* Tabs header */}
-        <div className="flex items-center justify-between">
-          {["skills", "stack", "hobbies"].map((item) => (
-            <div
-              key={item}
-              onClick={() => setTab(item)}
-              className={`w-1/3 p-3 text-center cursor-pointer text-gray-300 hover:bg-gray-800 hover:text-gray-200 
-                ${tab === item ? "bg-gray-900 text-gray-200 border-b-2 border-orange-600" : ""}`}
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </div>
-          ))}
+    <div className="w-full sm:mb-4">
+       <div style={{ height: '130px', position: 'relative', overflow: 'hidden'}}>
+
+        <LogoLoop
+
+          logos={techLogos}
+
+          speed={60}
+
+          direction="left"
+
+          logoHeight={48}
+
+          gap={40}
+
+          pauseOnHover
+
+          scaleOnHover
+
+          fadeOut
+
+          fadeOutColor="#060010"
+
+          ariaLabel="Technology partners"
+
+        />
+
         </div>
 
-        {/* Tabs content */}
-        {tab === "skills" && (
-          <div className="flex flex-wrap justify-center gap-2 p-4">
-            {[
-              "Java",
-              "Nodejs",
-              "Reactjs",
-              "PHP",
-              "Symfony",
-              "JavaScript",
-              "DDD",
-              "Drupal",
-              "Sql",
-            ].map((skill) => (
-              <div
-                key={skill}
-                className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                rounded-full text-sm
-                transition
-                hover:bg-blue-500/20 hover:-translate-y-0.5
-                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                  "
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        )}
-
-        {tab === "stack" && (
-          <div className="flex flex-wrap justify-center gap-2 p-4">
-           {["Software", "Ciberseguridad", "Frameworks", "IA"].map((hobby) => (
-              <div
-                key={hobby}
-                className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                rounded-full text-sm
-                transition
-                hover:bg-blue-500/20 hover:-translate-y-0.5
-                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
-              >
-                {hobby}
-              </div>
-            ))}
-          </div>
-        )}
-        
-        {tab === "hobbies" && (
-          <div className="flex flex-wrap justify-center gap-2 p-4">
-            {["Ping Pong", "Futbol"].map((hobby) => (
-              <div
-                key={hobby}
-                className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                rounded-full text-sm
-                transition
-                hover:bg-blue-500/20 hover:-translate-y-0.5
-                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
-              >
-                {hobby}
-              </div>
-            ))}
-          </div>
-        )}
+        <div style={{ padding: '0 3% 2rem'}}>
+          <AboutMe></AboutMe>
         </div>
+    
       </div>
           <section id="projects" className="wrapper">
-              <div className='p-5 text-center text-white'>
+              <div className='p-5 pb-16 text-center text-white'>
               <p className="text-gray-300 leading-relaxed  mx-16">
                 Mis proyectos se enfocan en el <strong>desarrollo web con Drupal y tecnologías modernas</strong>, integrando 
                  <strong> backend</strong> y optimización de <strong>frontend</strong> para crear soluciones seguras, escalables y de alto rendimiento.
