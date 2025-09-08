@@ -5,11 +5,4 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
   base: '/jpdiaz663/',
-  resolve: {
-    alias: {
-          '@': path.resolve(__dirname, './src'), // Alias '@' to the 'src' directory
-          '@components': path.resolve(__dirname, './src/components'), // Alias '@components' to 'src/components'
-          // Add more aliases as needed
-        },
-  }
 })
