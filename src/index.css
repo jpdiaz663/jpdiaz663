@@ -448,7 +448,7 @@ a {
       }
       100% {
         transform: translateX(250%);
-      }
+      } 
     }
 
     .animate-loading-bar {

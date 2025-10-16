@@ -1,10 +1,24 @@
 import './AboutMe.css';
+import ShinyText from "../components/ShinyText";
+import LaserFlow from "../components/LaserFlow.jsx";
 
 const AboutMe = () => {
     return (
-    <div className="container-about"> 
+    <div className='container'>
+
+     <section class="text-center">
+       <ShinyText
+                text="Sobre mí"
+                disabled={false}
+                speed={3}
+                className="custom-class"
+            />
+    </section>
+       
+
+    <div className="container--about"> 
         <div className="description box">
-            <h2>¿Qué hago?</h2>
+            <h3>¿Qué hago?</h3>
             <div className="content">
                 <span>
                     <span className="white-space-pre"> </span>
@@ -12,7 +26,7 @@ const AboutMe = () => {
                     <span className="white-space-pre"> </span>
                     <br /><p>💻 Mi enfoque en el área de bases de datos está en las bases de datos relacionales.</p>
                     <span className="white-space-pre"> </span>
-                    <br /><p>🎨 Mi conocimiento crece gracias a los proyectos en los que he participado <a style={{textDecoration: 'underline'}} href='https://github.com/juanrraider666'>reposjuandiaz</a>, y en el camino sigo aprendiendo nuevas tecnologías como LARAVEL, REACT NATIVE y GOLANG.</p>
+                    <br /><p>🎨 Mi conocimiento crece gracias a los <a style={{textDecoration: 'underline'}} href='https://github.com/juanrraider666'>proyectos</a> en los que he participado, y en el camino sigo aprendiendo nuevas tecnologías como LARAVEL, REACT NATIVE y GOLANG.</p>
                 </span>
             </div>
         </div>
@@ -20,7 +34,7 @@ const AboutMe = () => {
         <div className="about-career">
             <div className="box">
                 <h3>Desarrollo Full-Stack</h3>
-                <p>Entregamos soluciones completas, desde el diseño hasta el desarrollo y la IA/ML, con una trayectoria comprobada en la creación de sitios web impactantes y de alto rendimiento.</p>
+                <p>Entrego soluciones completas, desde el diseño hasta el desarrollo y la IA/ML, con una trayectoria comprobada en la creación de sitios web impactantes y de alto rendimiento.</p>
             </div>
     
             <div className="box">
@@ -31,7 +45,7 @@ const AboutMe = () => {
             </div>
         </div>
     </div>
-    
+    </div>
     );
 }
 

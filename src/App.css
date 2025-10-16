@@ -305,6 +305,7 @@ img {
   transition: background-color .3s;
 }
 
+
 .docs-button {
   color: #fff;
   background-color: #060010;
@@ -321,49 +322,56 @@ img {
   display: flex;
 }
 
-.jp-primary-button {
-  background-color: #121521;
+.button {
   border-radius: 8px;
-  border:1px solid var(--color-orange-900);
-  transition: all .3s ease-in-out;
   padding: 16px 52px;
-  outline: 2px solid transparent;
-  outline-offset: -1.5px;
+  display: inline-flex;       /* Needed for align-items to work */
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
   max-width: 100%;
   pointer-events: auto;
- 
+  cursor: pointer;            /* Helps with accessibility */
+  text-decoration: none;      /* In case it's used on <a> */
+  font-weight: 500;           /* Optional: makes it more readable */
+  box-sizing: border-box;
 }
 
+/* Primary button */
+.button--secondary {
+  background-color: #121521;
+  border: 1px solid var(--color-orange-900);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: -1.5px;
+}
 
-.jp-primary-button:hover {
+/* Secondary button */
+.button--primary {          /* ✅ corrected spelling */
+  border: 1px solid var(--color-orange-400);
+  background-color: var(--color-orange-900);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  justify-content: center;
+  text-align: left;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.button--secondary:hover {
   outline:1px solid var(--color-orange-600);
   background:#121521;
   box-shadow:0 0 15.9px 0 rgba(113,232,223,.3)
 }
 
-.jp-primary-button:active,
-.jp-primary-button:focus {
+.button--secondary:active,
+.button--secondary:focus {
   background: #2d3748;
   border-color: #434190;
 }
 
-
-.jp-secundary-button {
-  border: 1px solid var(--color-orange-400);
-  background-color: var(--color-orange-900);
-  color: #fff;
-  padding: 16px 52px;
-  transition: all .3s ease-in-out;
-  display: inline-flex;
-  justify-content: center;
-  max-width: 100%;
-  text-align: left;
-  z-index: 10;
-  align-items: center;
-  box-sizing: border-box;
-  border-radius: 6px;
-  line-height: 1;
-}
 
 
 @media screen and (max-width: 480px) {
@@ -373,7 +381,7 @@ img {
    }
 }
 
-.jp-secundary-button:hover {
+.button--primary:hover {
   outline:1px solid var(--color-orange-600);
   background:#121521;
   box-shadow:0 0 15.9px 0 rgba(113,232,223,.3)

@@ -1,14 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-
-.container-about {
+.container--about {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
-
 }
 
-.container-about .description {
+.container--about .description {
     flex: 1 1;
     min-width: 280px;
     width: 100%;
@@ -20,13 +27,13 @@
     width: 100%;
 }
 
-.container-about .description .content {
+.container--about .description .content {
     padding: 0 5%;
     position: relative;
     z-index: 2;
 }
 
-.container-about .about-career {
+.container--about .about-career {
   grid-gap: 1rem;
   display: grid;
   flex: 1 1;
