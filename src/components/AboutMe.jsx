@@ -1,6 +1,7 @@
 import './AboutMe.css';
 import ShinyText from "../components/ShinyText";
 import LaserFlow from "../components/LaserFlow.jsx";
+import MeIcons from "./base/MeIcons.jsx";
 
 const AboutMe = () => {
     return (
@@ -18,15 +19,32 @@ const AboutMe = () => {
 
     <div className="container--about"> 
         <div className="description box">
-            <h3>¿Qué hago?</h3>
-            <div className="content">
+            <h3>🔥 Pragmatico </h3>
+            <div className="grid content">
                 <span>
                     <span className="white-space-pre"> </span>
-                    <br /><p>💾 Desarrollo de aplicaciones móviles híbridas y nativas en KOTLIN, IONIC y JAVA, gestionando el control de versiones con GIT.</p>
+                   <div className="absolute ">
+                        <MeIcons icon="standing"></MeIcons>
+                    </div>
+                    <div className='ml-40 summary'> 
+                        <span className="white-space-pre"> </span>
+                    <br />
+                    <br /><p>Estoy certificado como Ingeniero de software y especializado en seguridad informatica. </p>
                     <span className="white-space-pre"> </span>
-                    <br /><p>💻 Mi enfoque en el área de bases de datos está en las bases de datos relacionales.</p>
+                    <br /><p>💻 Siempre me han interesado las mejores prácticas de programación, cuestionar la forma en que se hacen las cosas y trabajar en equipo.</p>
                     <span className="white-space-pre"> </span>
                     <br /><p>🎨 Mi conocimiento crece gracias a los <a style={{textDecoration: 'underline'}} href='https://github.com/juanrraider666'>proyectos</a> en los que he participado, y en el camino sigo aprendiendo nuevas tecnologías como LARAVEL, REACT NATIVE y GOLANG.</p>
+                    
+                                            <div className="mt-8 pl-4 italic">
+                        <q className="block text-xs text-gray-500">
+                            Nunca olvides qué eres. El resto del mundo no lo olvidará. Conviértelo en tu armadura y nadie podrá usarlo para herirte.
+                        </q>
+                        <span className="block mt-2 text-sm text-gray-500 text-right">— Tyrion Lannister</span>
+                        </div>
+                    
+                    
+                    </div>
+                    
                 </span>
             </div>
         </div>

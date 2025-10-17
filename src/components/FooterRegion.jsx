@@ -1,6 +1,7 @@
 import { DiGithub, DiHtml5, DiJavascript } from "react-icons/di";
 import "./FooterRegion.css";
 import LaserFlow from "../components/LaserFlow.jsx";
+import MeIcons from "./base/MeIcons.jsx";
 import {
   SiReact,
   SiNextdotjs,
@@ -19,9 +20,21 @@ const FooterRegion = () => {
   const year = today.getFullYear();
   return (
     <>
-      <section id="contact" className="contact text-white mt-16 py-16">
-        
-        <div className="contect-resume mx-auto p-6 ">
+      {/*Tener cuidado con relative, ya que lo necesitamos para el svg */}
+      <section id="contact" className="relative contact text-white mt-16 py-16">
+         <MeIcons icon="fire"></MeIcons>
+        <div className="flex  justify-between flex-row mx-28 h-16">
+          <div className=" w-5"></div>
+          <div className=" w-5">{/*Agregar otra cosa */}</div>
+
+          <div className=" w-5 relative grow">
+            {/* SVG que se verá por fuera */}
+            <div className=" absolute -top-25 right-12 translate-x-1/2">
+              <MeIcons icon="resting"></MeIcons>
+            </div>
+          </div>
+        </div>
+        <div className=" contect-resume mx-auto p-6 ">
           {/* Columna 2 */}
           <div className="content grid md:grid-cols-4">
             <div className="title">

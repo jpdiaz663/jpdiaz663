@@ -21,3 +21,8 @@
 .footer-bottom--content {
     justify-content: space-between;
 }
+
+.resting-border {
+ 
+    border: 4px;
+}
