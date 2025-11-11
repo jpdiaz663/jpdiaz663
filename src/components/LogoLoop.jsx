@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
+// PropTypes library for runtime type checking
+import PropTypes from 'prop-types';
 import './LogoLoop.css';
 
+// Animation configuration constants for smooth looping behavior
 const ANIMATION_CONFIG = {
   SMOOTH_TAU: 0.25,
   MIN_COPIES: 2,
@@ -285,5 +288,41 @@ export const LogoLoop = memo(
 );
 
 LogoLoop.displayName = 'LogoLoop';
+
+// PropTypes validation for LogoLoop component
+LogoLoop.propTypes = {
+    logos: PropTypes.arrayOf(
+        PropTypes.oneOfType([
+            PropTypes.shape({
+                node: PropTypes.node.isRequired,
+                title: PropTypes.string,
+                href: PropTypes.string,
+                ariaLabel: PropTypes.string
+            }),
+            PropTypes.shape({
+                src: PropTypes.string.isRequired,
+                srcSet: PropTypes.string,
+                sizes: PropTypes.string,
+                width: PropTypes.number,
+                height: PropTypes.number,
+                alt: PropTypes.string,
+                title: PropTypes.string,
+                href: PropTypes.string
+            })
+        ])
+    ).isRequired,
+    speed: PropTypes.number,
+    direction: PropTypes.oneOf(['left', 'right']),
+    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    logoHeight: PropTypes.number,
+    gap: PropTypes.number,
+    pauseOnHover: PropTypes.bool,
+    fadeOut: PropTypes.bool,
+    fadeOutColor: PropTypes.string,
+    scaleOnHover: PropTypes.bool,
+    ariaLabel: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object
+};
 
 export default LogoLoop;

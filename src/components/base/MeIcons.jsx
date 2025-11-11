@@ -1,3 +1,6 @@
+// PropTypes library for runtime type checking
+import PropTypes from 'prop-types';
+
 const icons = {
   standing: (
     <svg
@@ -1219,6 +1222,11 @@ const MeIcons = ({icon}) => {
     console.log(icon);
     
   return icons[icon] ?? console.error('Ups! icon ' + icon + ' not found.');
+};
+
+// PropTypes validation for MeIcons component
+MeIcons.propTypes = {
+    icon: PropTypes.oneOf(['standing', 'resting', 'fire']).isRequired
 };
 
 export default MeIcons;

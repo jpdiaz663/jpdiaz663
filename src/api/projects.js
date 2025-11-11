@@ -2,13 +2,14 @@
 import API_ENDPOINTS from './endpoints';
 
 
-export const projectsapi = async () => {
-    const url = API_ENDPOINTS.getProjects.url;
+export const projectsapi = async ({params}) => {
+    const queryParams = new URLSearchParams(params).toString();
+    const url = `${API_ENDPOINTS.getProjects.url}&${queryParams}`;
 
     try {
         const response = await fetch(url, {
             headers: {
-                Authorization: `token +++`,
+                Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
                 Accept: 'application/vnd.github.v3+json',
             },
         })

@@ -1,75 +1,70 @@
-import React, { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { SiReact, SiPhp, SiMysql, SiNodedotjs } from "react-icons/si";
+import { projectsapi } from "../api/projects.js";
+import { LoadingScreen } from "../components/LoadingScreen";
 import Navbar from "../components/navbar.jsx";
 import FooterRegion from "../components/FooterRegion.jsx";
-import Card from "../components/card.jsx";
 import Projects from "./Projects.jsx";
-import { projectsapi } from "../api/projects.js";
-import dataMock from "../api/data-projects.json";
-import { LoadingScreen } from "../components/LoadingScreen";
-
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiPhp,
-  SiMysql,
-} from "react-icons/si";
 import { LogoLoop } from "../components/LogoLoop.jsx";
 import AboutMe from "../components/AboutMe.jsx";
 import SimpleHero from "../components/SimpleHero.jsx";
-import LaserFlow from "../components/LaserFlow.jsx";
+
+const TECH_LOGOS = [
+  { node: <SiPhp />, title: "PHP", href: "https://php.net" },
+  { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com" },
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" }
+];
+
+const buttons  = [
+  { label: "Enviar email", href: "mailto:jpdiaz663@hotmail.com", external: true, className: "button button--primary" },
+  { label: "Hablemos por chat", href: "https://wa.me/573138408391", external: true, className: "button button--whatsapp" },
+]
+
+const fetchProjects = async () => {
+  try {
+    return await projectsapi({ per_page: 12 });
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+};
 
 const Home = () => {
-  const [projects, setProjects] = useState({});
-
-  /** loaded function */
+  const [projects, setProjects] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  /** Lopop tech */
-
-  const techLogos = [
-    { node: <SiPhp />, title: "Php", href: "https://php.net" },
-    { node: <SiMysql />, title: "Mysql", href: "https://www.mysql.com" },
-
-    { node: <SiReact />, title: "React", href: "https://react.dev" },
-
-    { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
-  ];
+  // Memoize the callback
+  const handleLoadingComplete = useCallback(() => {
+      setIsLoaded(true);
+  }, []);
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      //const data = await projectsapi();
-      setProjects(dataMock);
-    };
-    fetchProjects();
+    fetchProjects().then(data => setProjects(data));
   }, []);
 
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
+      {!isLoaded && <LoadingScreen onComplete={handleLoadingComplete}/>}{" "}
       <Navbar />
       <SimpleHero>
         {/*<---Buttons--->*/}
-        <a
-          href="https://folll.io/juanpablod%C3%ADazalbarracin/resume"
-          target="_blank"
-          className="button button--primary"
-          rel="noopener noreferrer"
-        >
-          Sobre Mí
-        </a>
-        <a href="#projects" className="button button--secondary">
-          Ver mis proyectos
-        </a>
+        {buttons.map((button) => (
+          <a
+            href={button.href}
+            {...(button.external && { target: "_blank", rel: "noopener noreferrer" })}
+            rel="noopener noreferrer"
+            className={button.className}
+          >
+            {button.label}
+          </a>
+        ))}
+        
       </SimpleHero>
+
       <div className="w-full">
-        <div
-          style={{ height: "100px", position: "relative", overflow: "hidden" }}
-        >
+        <div className="h-[100px] relative overflow-hidden">
           <LogoLoop
-            logos={techLogos}
+            logos={TECH_LOGOS}
             speed={60}
             direction="left"
             logoHeight={48}
@@ -78,43 +73,46 @@ const Home = () => {
             scaleOnHover
             fadeOut
             fadeOutColor="#060010"
-            ariaLabel="Technology partners"
+            ariaLabel="Technology stack"
           />
         </div>
 
-        <section style={{ padding: "0 3% 2rem" }}>
-          <AboutMe></AboutMe>
+        <section className="px-[3%] pb-8">
+          <AboutMe />
         </section>
 
-        <div style={{ "padding-top": "8px" }}></div>
         <section id="projects" className="wrapper">
           <div className="p-5 pb-16 text-center text-white service-container">
-            <h2>
-              Mi experiencia en{" "}
-              <span>
-                <span> proyectos </span>
-              </span>{" "}
-              web
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Mi experiencia en <span className="text-yellow-300">proyectos</span> web
             </h2>
-            <p className="text-gray-300 leading-relaxed  mx-16">
+            <p className="text-gray-300 leading-relaxed max-w-4xl mx-auto px-4">
               Mis proyectos se enfocan en el{" "}
               <strong>desarrollo web con Drupal y tecnologías modernas</strong>,
-              integrando
-              <strong> backend</strong> y optimización de{" "}
+              integrando <strong>backend</strong> y optimización de{" "}
               <strong>frontend</strong> para crear soluciones seguras,
               escalables y de alto rendimiento. He trabajado en{" "}
               <strong>portales corporativos multilingües</strong>,
               implementación de <strong>APIs y gateways</strong>, y
               <strong> optimización de despliegues</strong> en entornos cloud
-              como <a href="https://pantheon.io/">Pantheon</a>.
+              como{" "}
+              <a 
+                href="https://pantheon.io/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                Pantheon
+              </a>.
             </p>
           </div>
+          
           <div className="card-projects">
             <Projects projects={projects} />
           </div>
         </section>
 
-        <FooterRegion></FooterRegion>
+        <FooterRegion />
       </div>
     </>
   );

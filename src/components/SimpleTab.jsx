@@ -1,7 +1,11 @@
+// React hooks for state management
+import { useState } from 'react';
+
 const SimpleTab = () => {
 
     const [tab, setTab] = useState("skills");
     
+    return (
     <div className={`flex flex-col border border-white/10 duration-500`}
     >
     {/* Tabs header */}
@@ -81,4 +85,7 @@ const SimpleTab = () => {
       </div>
     )}
     </div>
-}
+    );
+};
+
+export default SimpleTab;

@@ -1,15 +1,22 @@
+/* ========================================
+   TILTED CARD COMPONENT STYLES
+   3D interactive card with tilt effect using Framer Motion
+   ======================================== */
+
+/* Main figure container with 3D perspective */
 .tilted-card-figure {
   position: relative;
   width: 100%;
   height: 100%;
+  /* Perspective creates 3D space for child elements */
   perspective: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 
+/* Mobile warning - shows on small screens */
 .tilted-card-mobile-alert {
   position: absolute;
   top: 1rem;
@@ -18,6 +25,7 @@
   display: none;
 }
 
+/* Mobile responsiveness */
 @media (max-width: 640px) {
   .tilted-card-mobile-alert {
     display: block;
@@ -27,42 +35,46 @@
   }
 }
 
+/* Inner container - preserves 3D transformations */
 .tilted-card-inner {
   position: relative;
+  /* Preserve-3d enables nested 3D effects */
   transform-style: preserve-3d;
 }
 
-
+/* Demo text overlay - project name */
 .tilted-card-demo-text {
   text-transform: capitalize;
   color: #fff;
-  letter-spacing: -.5px;
-  background: #0006;
+  letter-spacing: -0.5px;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 14px;
   margin: 2em;
-  padding: .5rem 1em;
+  padding: 0.5rem 1em;
   font-weight: 900;
-  box-shadow: 0 5px 30px #06001059;
+  box-shadow: 0 5px 30px rgba(6, 0, 16, 0.35);
 }
 
-
+/* Card image - positioned absolutely for layering */
 .tilted-card-img {
   position: absolute;
   top: 0;
   left: 0;
   object-fit: cover;
   border-radius: 15px;
+  /* will-change optimizes transform performance */
   will-change: transform;
   transform: translateZ(0);
-  
 }
 
+/* Overlay content - elevated above image */
 .tilted-card-overlay {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
   will-change: transform;
+  /* translateZ creates depth separation */
   transform: translateZ(30px);
   width: 100%;
   height: 100%;
@@ -70,7 +82,7 @@
   flex-direction: column;
 }
 
-
+/* Caption tooltip - follows mouse cursor */
 .tilted-card-caption {
   pointer-events: none;
   position: absolute;
@@ -84,3 +96,4 @@
   opacity: 0;
   z-index: 3;
 }
+

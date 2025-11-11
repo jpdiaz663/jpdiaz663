@@ -1,151 +1,175 @@
-import { DiGithub, DiHtml5, DiJavascript } from "react-icons/di";
-import "./FooterRegion.css";
-import LaserFlow from "../components/LaserFlow.jsx";
-import MeIcons from "./base/MeIcons.jsx";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiPhp,
-  SiMysql,
-} from "react-icons/si";
+import { DiGithub, DiHtml5 } from "react-icons/di";
+import { SiReact, SiJavascript } from "react-icons/si";
 import { BiLogoTailwindCss } from "react-icons/bi";
-import { CiLinkedin } from "react-icons/ci";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import MeIcons from "./base/MeIcons.jsx";
+import "./FooterRegion.css";
 
 const FooterRegion = () => {
-  const today = new Date();
-  const year = today.getFullYear();
+  const year = new Date().getFullYear();
+
+  const CONTACT_INFO = [
+    { 
+      icon: "🙍‍♂️", 
+      label: "LinkedIn", 
+      href: "https://www.linkedin.com/in/juan-pablo-diaz-773317199",
+      type: "link"
+    },
+    { 
+      label: "Correo", 
+      icon: "📧", 
+      href: "mailto:jpdiaz663@hotmail.com", 
+      text: "jpdiaz663@hotmail.com" 
+    },
+    { 
+      label: "Teléfono", 
+      icon: "📞", 
+      href: "tel:+573138408391", 
+      text: "+57 3138408391" 
+    },
+    { 
+      label: "WhatsApp", 
+      icon: "💬", 
+      href: "https://wa.me/573138408391", 
+      text: "+57 3138408391" 
+    }
+  ];
+
+  const TECHNOLOGIES = [
+    { Icon: SiReact, color: "#61DAFB", title: "React" },
+    { Icon: SiJavascript, color: "#F7DF1E", title: "JavaScript" },
+    { Icon: BiLogoTailwindCss, color: "#06B6D4", title: "Tailwind CSS" },
+    { Icon: DiGithub, color: "white", title: "GitHub" },
+    { Icon: DiHtml5, color: "#E34F26", title: "HTML5" }
+  ];
+
+  const SOCIAL_LINKS = [
+    { 
+      Icon: FaLinkedin, 
+      href: "https://www.linkedin.com/in/juan-pablo-diaz-773317199", 
+      label: "LinkedIn",
+      hoverColor: "hover:text-blue-400"
+    },
+    { 
+      Icon: FaFacebook, 
+      href: "#", 
+      label: "Facebook",
+      hoverColor: "hover:text-blue-600"
+    },
+    { 
+      Icon: FaInstagram, 
+      href: "https://www.instagram.com/juanazdiaz", 
+      label: "Instagram",
+      hoverColor: "hover:text-pink-500"
+    }
+  ];
   return (
-    <>
-      {/*Tener cuidado con relative, ya que lo necesitamos para el svg */}
-      <section id="contact" className="relative contact text-white mt-16 py-16">
-         <MeIcons icon="fire"></MeIcons>
-        <div className="flex  justify-between flex-row mx-28 h-16">
-          <div className=" w-5"></div>
-          <div className=" w-5">{/*Agregar otra cosa */}</div>
-
-          <div className=" w-5 relative grow">
-            {/* SVG que se verá por fuera */}
-            <div className=" absolute -top-25 right-12 translate-x-1/2">
-              <MeIcons icon="resting"></MeIcons>
-            </div>
+    <section id="contact" className="relative contact text-white mt-8 py-16">
+      <MeIcons icon="fire" />
+      
+      <div className="flex justify-between flex-row mx-28 h-16">
+        <div className="w-5" />
+        <div className="w-5" />
+        <div className="w-5 relative grow">
+          <div className="absolute -top-25 right-12 translate-x-1/2">
+            <MeIcons icon="resting" />
           </div>
         </div>
-        <div className=" contect-resume mx-auto p-6 ">
-          {/* Columna 2 */}
-          <div className="content grid md:grid-cols-4">
-            <div className="title">
-              <h2 className="text-3xl font-bold">Contáctame</h2>
-            </div>
-            <div className="space-y-4">
-              <p className="text-lg text-gray-300">Conecta conmigo</p>
-              <div>
-                🙍‍♂️
-                <a href="https://www.linkedin.com/in/juan-pablo-diaz-773317199">
-                  Linkedin
-                </a>
-              </div>
-              <div>
-                <p className="font-semibold">📧 Correo:</p>
-                <a
-                  href="mailto:jpdiaz663@hotmail.com"
-                  className="text-blue-400 hover:underline"
-                >
-                  jpdiaz663@hotmail.com
-                </a>
-              </div>
-              <div>
-                <p className="font-semibold">📞 Teléfono:</p>
-                <a
-                  href="tel:+57313840839"
-                  className="text-blue-400 hover:underline"
-                >
-                  +57 3138408391
-                </a>
-              </div>
-              <div>
-                <p className="font-semibold">💬 WhatsApp:</p>
-                <a
-                  href="https://wa.me/573138408391"
-                  className="text-blue-400 hover:underline"
-                >
-                  +57 3138408391
-                </a>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <p className="text-lg text-gray-300 ">Tecnologias usadas</p>
+      </div>
 
-              <div>
-                <p className="font-semibold">
-                  <SiReact size={"50px"} />
-                </p>
-                <p className="font-semibold">
-                  <DiJavascript size={"50px"} />
-                </p>
-                <p className="font-semibold">
-                  <BiLogoTailwindCss size={"50px"} />
-                </p>
-                <p className="font-semibold">
-                  <DiGithub size={"50px"} />
-                </p>
-                <p className="font-semibold">
-                  <DiHtml5 size={"50px"} />
-                </p>
-              </div>
-            </div>
+      <div className="contect-resume mx-auto p-6">
+        <div className="content grid md:grid-cols-4">
+          <div className="title">
+            <h2 className="text-3xl font-bold">Contáctame</h2>
+          </div>
 
-            <div className="space-y-4">
-              <p className="text-lg text-gray-300">Sobre este proyecto</p>
-
-              <div>
-                <p className="">
-                  Este proyecto utiliza la GitHub API para consumir y mostrar
-                  dinámicamente los proyectos que tengo almacenados en mi
-                  repositorio. A través de solicitudes a la API, obtiene
-                  información como el nombre, descripción, tecnologías
-                  utilizadas y enlaces a cada repositorio. El objetivo principal
-                  es centralizar y visualizar de forma automática mi portafolio
-                  de desarrollo, sin necesidad de actualizar manualmente la
-                  información.
-                </p>
+          <div className="space-y-4">
+            <p className="text-lg text-gray-300">Conecta conmigo</p>
+            {CONTACT_INFO.map(({ icon, label, href, text }) => (
+              <div key={label}>
+                {text ? (
+                  <>
+                    <p className="font-semibold">{icon} {label}:</p>
+                    <a
+                      href={href}
+                      {...(href.startsWith('http') && { target: "_blank", rel: "noopener noreferrer" })}
+                      className="text-blue-400 hover:underline transition-colors"
+                    >
+                      {text}
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    {icon}{" "}
+                    <a 
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline transition-colors"
+                    >
+                      {label}
+                    </a>
+                  </>
+                )}
               </div>
+            ))}
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-lg text-gray-300">Tecnologías usadas</p>
+            <div className="flex flex-col gap-2">
+              {TECHNOLOGIES.map((tech) => {
+                const IconComponent = tech.Icon;
+                return (
+                  <div key={tech.title} className={`text-[${tech.color}]`} title={tech.title}>
+                    <IconComponent size="50px" />
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Línea al final */}
-          <hr className="my-4 border-gray-700" />
-
-          <div className="footer-bottom--content flex flex-row">
-            <p className="text-left text-gray-400 text-sm">
-              © {year} Juan Pablo Díaz — Todos los derechos reservados.
+          <div className="space-y-4">
+            <p className="text-lg text-gray-300">Sobre este proyecto</p>
+            <p className="text-sm leading-relaxed">
+              Este proyecto utiliza la GitHub API para consumir y mostrar
+              dinámicamente los proyectos que tengo almacenados en mi
+              repositorio. A través de solicitudes a la API, obtiene
+              información como el nombre, descripción, tecnologías
+              utilizadas y enlaces a cada repositorio. El objetivo principal
+              es centralizar y visualizar de forma automática mi portafolio
+              de desarrollo, sin necesidad de actualizar manualmente la
+              información.
             </p>
-            <div class="flex flex-row flex-wrap gap-2">
-              <a
-                target="_blank"
-                aria-label="Visit our LinkedIn page"
-                href="https://www.linkedin.com/in/juan-pablo-diaz-773317199"
-              >
-                <FaLinkedin></FaLinkedin>
-              </a>
-              <a aria-label="Visit our Facebook page" href="#">
-                <FaFacebook></FaFacebook>
-              </a>
-              <a
-                target="_blank"
-                aria-label="Visit our Instagram page"
-                href="https://www.instagram.com/juanazdiaz"
-              >
-                <FaInstagram></FaInstagram>
-              </a>
-            </div>
           </div>
         </div>
-      </section>
-    </>
+
+        <hr className="my-4 border-gray-700" />
+
+        <div className="footer-bottom--content flex flex-row">
+          <p className="text-left text-gray-400 text-sm">
+            © {year} Juan Pablo Díaz — Todos los derechos reservados.
+          </p>
+          
+          <div className="flex flex-row flex-wrap gap-2">
+            {SOCIAL_LINKS.map((social) => {
+              const IconComponent = social.Icon;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  {...(social.href !== "#" && { target: "_blank", rel: "noopener noreferrer" })}
+                  aria-label={`Visit my ${social.label} page`}
+                  className={`${social.hoverColor} transition-colors`}
+                >
+                  <IconComponent />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

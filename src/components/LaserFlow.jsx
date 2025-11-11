@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import * as THREE from 'three'; // Three.js library for WebGL 3D graphics
+// PropTypes library for runtime type checking
+import PropTypes from 'prop-types';
 import './LaserFlow.css';
 
 const VERT = `
@@ -429,7 +431,6 @@ export const LaserFlow = ({
       renderer.dispose();
       mount.removeChild(renderer.domElement);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     wispDensity,
     dpr,
@@ -452,6 +453,30 @@ export const LaserFlow = ({
   ]);
 
   return <div ref={mountRef} className={`laser-flow-container ${className}`} style={style} />;
+};
+
+// PropTypes validation for LaserFlow component
+LaserFlow.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    wispDensity: PropTypes.number,
+    dpr: PropTypes.number,
+    mouseSmoothTime: PropTypes.number,
+    mouseTiltStrength: PropTypes.number,
+    horizontalBeamOffset: PropTypes.number,
+    verticalBeamOffset: PropTypes.number,
+    flowSpeed: PropTypes.number,
+    verticalSizing: PropTypes.number,
+    horizontalSizing: PropTypes.number,
+    fogIntensity: PropTypes.number,
+    fogScale: PropTypes.number,
+    wispSpeed: PropTypes.number,
+    wispIntensity: PropTypes.number,
+    flowStrength: PropTypes.number,
+    decay: PropTypes.number,
+    falloffStart: PropTypes.number,
+    fogFallSpeed: PropTypes.number,
+    color: PropTypes.string
 };
 
 export default LaserFlow;

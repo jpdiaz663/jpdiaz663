@@ -1,7 +1,15 @@
+/* ========================================
+   SHINY TEXT COMPONENT STYLES
+   Animated text with shimmering gradient effect
+   ======================================== */
+
+/* Main shiny text style with gradient animation */
 .shiny-text {
   font-size: 45px;
   margin: 16px;
-  color: #b5b5b5a4; /* Adjust this color to change intensity/style */
+  /* Base text color - adjust for different intensities */
+  color: #b5b5b5a4;
+  /* Gradient creates the shiny effect with orange accent */
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 40%,
@@ -9,12 +17,15 @@
     rgba(255, 255, 255, 0) 60%
   );
   background-size: 200% 100%;
+  /* Clips background to text for gradient effect */
   -webkit-background-clip: text;
   background-clip: text;
   display: inline-block;
+  /* Default animation - can be customized via speed prop */
   animation: shine 5s linear infinite;
 }
 
+/* Shine animation - moves gradient across text */
 @keyframes shine {
   0% {
     background-position: 100%;
@@ -24,11 +35,12 @@
   }
 }
 
+/* Disabled state - stops animation */
 .shiny-text.disabled {
   animation: none;
 }
 
-
+/* Custom class modifier for centered text */
 .custom-class {
-text-align: center;
+  text-align: center;
 }

@@ -3,10 +3,18 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  --border-color:#2d3748
-  --ifm-btn-border-color-active:#718096;
-  --ifm-btn-border-color:#e2e8f0;
-
+  
+  /* Color variables */
+  --border-color: #2d3748;
+  --ifm-btn-border-color-active: #718096;
+  --ifm-btn-border-color: #e2e8f0;
+  
+  /* Orange color palette */
+  --color-orange-400: #fb923c;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-900: #7c2d12;
+  --color-orange-950: #431407;
 }
 
 
@@ -347,7 +355,19 @@ img {
   outline-offset: -1.5px;
 }
 
-/* Secondary button */
+/* Secondary button with arrow icon */
+.button--secondary::after {
+  content: "→";
+  margin-left: 8px;
+  font-size: 1.2em;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button--secondary:hover::after {
+  transform: translateX(4px);
+}
+
+/* Primary button */
 .button--primary {          /* ✅ corrected spelling */
   border: 1px solid var(--color-orange-400);
   background-color: var(--color-orange-900);
@@ -358,6 +378,55 @@ img {
   text-align: left;
   z-index: 10;
   box-sizing: border-box;
+}
+
+/* Primary button with external link icon */
+.button--primary::after {
+  content: "↗";
+  margin-left: 8px;
+  font-size: 1.1em;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button--primary:hover::after {
+  transform: translate(2px, -2px);
+}
+
+/* WhatsApp button */
+.button--whatsapp {
+  background-color: #121521;
+  border: 1px solid var(--color-orange-900);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  justify-content: center;
+  text-align: left;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* WhatsApp button with chat icon */
+.button--whatsapp::after {
+  content: "💬";
+  margin-left: 8px;
+  font-size: 1.1em;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button--whatsapp:hover {
+  outline: 1px solid var(--color-orange-600);
+  background: #121521;
+  box-shadow: 0 0 15.9px 0 rgba(113,232,223,.3);
+}
+
+.button--whatsapp:hover::after {
+  transform: translate(2px, -2px);
+}
+
+.button--whatsapp:active,
+.button--whatsapp:focus {
+  background-color: #2d3748;
+  border-color: #434190;
 }
 
 .button--secondary:hover {
