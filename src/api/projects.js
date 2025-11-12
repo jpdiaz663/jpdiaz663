@@ -7,6 +7,8 @@ export const projectsapi = async ({params}) => {
     const url = `${API_ENDPOINTS.getProjects.url}&${queryParams}`;
 
     try {
+
+        console.log('Fetching projects...' + '🚀🚀🚀');
         const response = await fetch(url, {
             headers: {
                 Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
@@ -19,7 +21,7 @@ export const projectsapi = async ({params}) => {
             throw new Error(`Error fetching projects: ${response.statusText}`);
         }
 
-        return  await response.json();
+        return await response.json();
     } catch (error) {
         console.log(`Error fetching projects: ${error.message}`);
     }
