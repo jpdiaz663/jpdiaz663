@@ -9,14 +9,16 @@ export const LoadingScreen = ({ onComplete }) => {
   const hour = new Date().getHours();
 
   const summaryHandle = useCallback(() => {
-    if(hour > 18) {
-      setTextSummary('Buenas noches' + "🌚");
-    } else if(hour > 12) {
-      setTextSummary('Buenos días' + "🌞");
-    }else{
-      setTextSummary('Buenas tardes' + "🌞");
-    }
+    const summaries = [
+      {text: "Buenas noches 🌚", hours: 18},
+      {text: "Buenas tardes 🌞", hours: 12},
+      {text: "Buenos días 🌞", hours: 1},
+    ]
+    
+    const targetHour = summaries.find(summary => hour >= summary.hours)?.text;
+    setTextSummary(targetHour);
   }, [hour]);
+
  
   useEffect(() => {
     summaryHandle();
