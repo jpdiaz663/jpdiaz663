@@ -25,36 +25,53 @@ If you are developing a production application, we recommend using TypeScript wi
 2. **Install dependencies:**
 
    ```bash
-   npm install
+   yarn install
    ```
 
-3. **Start the development server:**
+3. **Set up environment variables:**
+
+   Create a `.env` file in the root directory and add your GitHub token:
 
    ```bash
-   npm run dev
+   VITE_GITHUB_TOKEN=your_github_token_here
+   ```
+
+   **Important:** The `VITE_GITHUB_TOKEN` is required to access the GitHub API and display your GitHub data in the portfolio. Without this token, GitHub API features will not work properly.
+
+   **To create a new GitHub token:**
+   - Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+   - Click "Generate new token"
+   - Select the appropriate scopes (at minimum: `public_repo` or `repo` for repository access)
+   - Copy the generated token and paste it in your `.env` file
+
+4. **Start the development server:**
+
+   ```bash
+   yarn dev
    ```
 
    The application should now be running at [http://localhost:5173](http://localhost:5173).
+
 
 ## Build
 
 To create a production build, run:
 
 ```bash
-npm run build
+yarn run build
 ```
 
 Then, you can preview the production build with:
 
 ```bash
-npm run preview
+yarn run preview
 ```
 
 ## Upload to prod: 
 ```bash
-npm run build
+yarn run build
 ```
 
 ```bash
-npm run deploy
+yarn run deploy
 ```
