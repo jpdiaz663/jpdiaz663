@@ -10,12 +10,12 @@ export const LoadingScreen = ({ onComplete }) => {
 
   const summaryHandle = useCallback(() => {
     const summaries = [
-      {text: "Buenas noches 🌚", hours: 18},
-      {text: "Buenas tardes 🌞", hours: 12},
-      {text: "Buenos días 🌞", hours: 1},
+      {text: "Buenas noches 🌚", from: 18, to: 24},
+      {text: "Buenas tardes 🌞", from: 12, to: 17},
+      {text: "Buenos días 🌞", from: 1, to: 11},
     ]
     
-    const targetHour = summaries.find(summary => hour >= summary.hours)?.text;
+    const targetHour = summaries.find(summary => hour >= summary.from && hour <= summary.to)?.text;
     setTextSummary(targetHour);
   }, [hour]);
 
