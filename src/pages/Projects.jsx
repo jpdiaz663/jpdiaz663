@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import manAndComputerImg from "../assets/man-and-computer.png";
 import geminiImage1 from "../assets/Gemini_Generated_Image_8wsxp68wsxp68wsx.png";
 import geminiImage2 from "../assets/Gemini_Generated_Image_h6wz8dh6wz8dh6wz.png";
-
+import buildingImg from "../assets/building.png";
 
 const COMPANY_PROJECTS = [
   {
@@ -49,7 +49,7 @@ export const Projects = ({ projects = [] }) => {
         {allProjects.map((project, index) => {
           let code = project.html_url;
           let image =
-            project.image ?? randomImages[Math.floor(Math.random() * randomImages.length)];
+            project.image ?? buildingImg;
           return (
             <TiltedCard
               key={index}
