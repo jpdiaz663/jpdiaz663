@@ -10,8 +10,8 @@ export const LoadingScreen = ({ onComplete }) => {
 
   const summaryHandle = useCallback(() => {
     const summaries = [
-      {text: "Buenas noches 🌚", from: 18, to: 24},
-      {text: "Buenas tardes 🌞", from: 12, to: 17},
+      {text: "Buenas noches 🌚", from: 19, to: 24},
+      {text: "Buenas tardes 🌞", from: 12, to: 18},
       {text: "Buenos días 🌞", from: 1, to: 11},
     ]
     
