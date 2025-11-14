@@ -1,7 +1,6 @@
 
 import API_ENDPOINTS from './endpoints';
 
-
 export const projectsapi = async ({params}) => {
     const queryParams = new URLSearchParams(params).toString();
     const url = `${API_ENDPOINTS.getProjects.url}&${queryParams}`;
