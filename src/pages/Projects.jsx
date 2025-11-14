@@ -6,6 +6,7 @@ import manAndComputerImg from "../assets/man-and-computer.png";
 import geminiImage1 from "../assets/Gemini_Generated_Image_8wsxp68wsxp68wsx.png";
 import geminiImage2 from "../assets/Gemini_Generated_Image_h6wz8dh6wz8dh6wz.png";
 import buildingImg from "../assets/building.jpg";
+import building2Img from "../assets/building-shadow.png";
 
 const COMPANY_PROJECTS = [
   {
@@ -19,16 +20,16 @@ const COMPANY_PROJECTS = [
 ];
 
 const randomImages = [
-  "https://assets.bounceexchange.com/assets/uploads/clients/5264/creatives/38d34cbc6a5807926221a8935d9c4322.jpg",
+  /*"https://assets.bounceexchange.com/assets/uploads/clients/5264/creatives/38d34cbc6a5807926221a8935d9c4322.jpg",
   manAndComputerImg,
   "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/hpe/front_end_gamification/images/bg_gam.jpg",
   "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/hpe/lightbox/black_diamond_bd/images/bg_bithdayt.jpg",
   "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/lenovo/56370-Banner%20ENTRENAMIENTOS%20Q1%20frontend/html/img/carousel_banners/banner-DCG-sportlight.jpg",
   "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/lenovo/56370-Banner%20ENTRENAMIENTOS%20Q1%20frontend/html/img/carousel_banners/banner-DCG-sportlight_servers.png",
+  */
+  buildingImg,
+  building2Img,
   "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/lenovo/56370-Banner%20ENTRENAMIENTOS%20Q1%20frontend/html/img/carousel_banners/countdown.jpg",
-  geminiImage1,
-  geminiImage2,
-  "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/lenovo/56370-Banner%20ENTRENAMIENTOS%20Q1%20frontend/html/img/carousel_banners/welcome_dcg_spotlight.jpg",
   "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/hpe/banners/images/gamification-banner.jpg",
   "https://raw.githubusercontent.com/juanrraider666/assets/refs/heads/master/HTML_proyectos/hpe/58531_JRIT%20new%20design/images/bg/bg_color.jpg"
 ]
@@ -49,7 +50,7 @@ export const Projects = ({ projects = [] }) => {
         {allProjects.map((project, index) => {
           let code = project.html_url;
           let image =
-            project.image ?? buildingImg;
+            project.image ?? randomImages[Math.floor(Math.random() * randomImages.length)];
           return (
             <TiltedCard
               key={index}
