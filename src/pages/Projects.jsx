@@ -56,7 +56,7 @@ export const Projects = ({ projects = [] }) => {
               key={index}
               imageSrc={image}
               altText={project.name}
-              captionText={project.description || 'Ups! No description available.'}
+              captionText={project.description || 'Estamos trabajando en este proyecto... 🚧'}
               rotateAmplitude={12}
               scaleOnHover={1.1}
               showMobileWarning={false}
