@@ -64,7 +64,7 @@ const FooterRegion = () => {
     }
   ];
   return (
-    <section id="contact" className="relative contact text-white mt-8 py-16">
+    <section id="contact" className="relative contact text-white mt-12 py-16">
       <MeIcons icon="fire" />
       
       <div className="flex justify-between flex-row mx-28 h-16">
