@@ -67,10 +67,10 @@ const AboutMe = () => {
                     </div>
             
                     <div className="box">
-                        <h3>Revisiones Ilimitadas</h3>
+                        <h3>Seguridad Informática</h3>
                         <p>
-                            Con revisiones ilimitadas y soporte dedicado, aseguramos que tu visión y tu 
-                            sitio web cobren vida exactamente como lo imaginas.
+                            Implemento medidas de seguridad robustas para proteger tus datos y los de tus usuarios, 
+                            asegurando la integridad y confidencialidad de la información en todo momento.
                         </p>
                     </div>
                 </div>
