@@ -6,7 +6,7 @@ const SimpleHero = ({children}) => {
     <section className="text-center py-20 bg-gradient-to-r text-gray-300">
       <h1 className="text-4xl font-bold mb-4">
         Especialista en Drupal, Backend y{" "}
-        <span className="text-yellow-300">soluciones web modernas.</span>
+        <span className="text-sky-200">soluciones web modernas.</span>
       </h1>
       <p className="text-lg mb-6">
       Indie Hacker,

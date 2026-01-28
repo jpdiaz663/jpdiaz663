@@ -298,6 +298,16 @@ img {
   color: #4CC6FF
 }
 
+.text-sky-300 {
+  color: var(--color-sky-300);
+}
+.text-sky-100 {
+  color: var(--color-sky-100);
+}
+
+.text-sky-200 {
+  color: var(--color-sky-200);
+}
 
 .docs-button-bar {
   display: flex;
@@ -343,6 +353,10 @@ img {
   text-decoration: none;      /* In case it's used on <a> */
   font-weight: 500;           /* Optional: makes it more readable */
   box-sizing: border-box;
+
+  &:hover{
+    text-decoration: none;
+  }
 }
 
 /* Primary button */
@@ -470,7 +484,7 @@ img {
 }
 
 .service-container span {
-  color: yellow;
+  color: var(--color-sky-200);
 }
 
 .rough-annotation {

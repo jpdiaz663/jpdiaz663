@@ -84,7 +84,7 @@ const Home = () => {
         <section id="projects" className="wrapper">
           <div className="p-5 pb-16 text-center text-white service-container">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Mi experiencia en <span className="text-yellow-300">proyectos</span> web
+              Mi experiencia en <span className="">proyectos</span> web
             </h2>
             <p className="text-gray-300 leading-relaxed max-w-4xl mx-auto px-4">
               Mis proyectos se enfocan en el{" "}
@@ -100,7 +100,7 @@ const Home = () => {
                 href="https://pantheon.io/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:underline"
+                className="text-blue-400 "
               >
                 Pantheon
               </a>.
