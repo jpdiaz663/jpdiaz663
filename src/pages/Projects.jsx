@@ -9,14 +9,7 @@ import buildingImg from "../assets/building.jpg";
 import building2Img from "../assets/building-shadow.png";
 
 const COMPANY_PROJECTS = [
-  {
-    name: "Inter-American Development Bank",
-    image:
-      "https://www.iadb.org/sites/default/files/styles/landscape_2x1_768000_768x384_100/public/2023-01/006-01-BID-Integracion-regional.jpg?h=51a72048&itok=lUe7xbaG",
-    description:
-      "Is the leading source of financing and knowledge for improving lives in Latin America and the Caribbean",
-    html_url: "https://www.iadb.org/en",
-  },
+  
 ];
 
 const randomImages = [

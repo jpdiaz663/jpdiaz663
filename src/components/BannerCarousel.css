@@ -1,0 +1,311 @@
+/* Banner Carousel Component Styles */
+
+.banner-carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Main Banner Display */
+.banner-carousel-main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+/* Background Media Container */
+.banner-carousel-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-carousel-image,
+.banner-carousel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-carousel-video {
+  background: #000;
+}
+
+/* Dark Overlay on Left Side */
+.banner-carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(6, 0, 16, 0.85) 0%,
+    rgba(6, 0, 16, 0.6) 70%,
+    transparent 100%
+  );
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  z-index: 2;
+}
+
+/* Content Container */
+.banner-carousel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Title */
+.banner-carousel-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Description */
+.banner-carousel-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tags Container */
+.banner-carousel-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Individual Tag */
+.banner-carousel-tag {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: rgba(18, 21, 33, 0.8);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+/* CTA Button - matches project button styles */
+.banner-carousel-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--color-orange-400);
+  background-color: var(--color-orange-900);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  margin-top: 0.5rem;
+  width: fit-content;
+  box-sizing: border-box;
+  outline: 2px solid transparent;
+  outline-offset: -1.5px;
+}
+
+.banner-carousel-cta:hover {
+  outline: 1px solid var(--color-orange-600);
+  background: #121521;
+  box-shadow: 0 0 15.9px 0 rgba(113, 232, 223, 0.3);
+  text-decoration: none;
+}
+
+.banner-carousel-cta-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.banner-carousel-cta:hover .banner-carousel-cta-icon {
+  transform: translateX(4px);
+}
+
+/* Navigation Arrows */
+.banner-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(18, 21, 33, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+.banner-carousel-nav:hover {
+  background: rgba(18, 21, 33, 0.95);
+  border-color: var(--color-orange-400);
+  box-shadow: 0 0 15.9px 0 rgba(113, 232, 223, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.banner-carousel-nav-prev {
+  left: 1rem;
+}
+
+.banner-carousel-nav-next {
+  right: 1rem;
+}
+
+/* Thumbnail Carousel */
+.banner-carousel-thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+
+/* Thumbnail Navigation Buttons */
+.banner-carousel-thumb-nav {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(18, 21, 33, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
+.banner-carousel-thumb-nav:hover {
+  background: rgba(18, 21, 33, 0.95);
+  border-color: var(--color-orange-400);
+  box-shadow: 0 0 10px 0 rgba(113, 232, 223, 0.2);
+  transform: scale(1.1);
+}
+
+/* Thumbnail List */
+.banner-carousel-thumb-list {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.banner-carousel-thumb-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Thumbnail */
+.banner-carousel-thumb {
+  position: relative;
+  width: 80px;
+  height: 45px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
+  background: #060010;
+  padding: 0;
+}
+
+.banner-carousel-thumb:hover {
+  transform: scale(1.05);
+  border-color: var(--color-orange-400);
+  box-shadow: 0 0 10px 0 rgba(113, 232, 223, 0.2);
+}
+
+.banner-carousel-thumb-active {
+  border-color: var(--color-orange-400);
+  box-shadow: 0 0 0 2px rgba(113, 232, 223, 0.3), 0 0 15.9px 0 rgba(113, 232, 223, 0.2);
+}
+
+.banner-carousel-thumb-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner-carousel-overlay {
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(6, 0, 16, 0.85) 0%,
+      rgba(6, 0, 16, 0.6) 70%,
+      transparent 100%
+    );
+    align-items: flex-start;
+    padding: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .banner-carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .banner-carousel-description {
+    font-size: 0.875rem;
+  }
+
+  .banner-carousel-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .banner-carousel-nav-prev {
+    left: 0.5rem;
+  }
+
+  .banner-carousel-nav-next {
+    right: 0.5rem;
+  }
+
+  .banner-carousel-thumb {
+    width: 60px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-carousel-main {
+    aspect-ratio: 16 / 9;
+  }
+
+  .banner-carousel-overlay {
+    padding: 1rem;
+  }
+
+  .banner-carousel-title {
+    font-size: 1.25rem;
+  }
+
+  .banner-carousel-cta {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}

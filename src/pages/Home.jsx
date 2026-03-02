@@ -8,6 +8,9 @@ import Projects from "./Projects.jsx";
 import { LogoLoop } from "../components/LogoLoop.jsx";
 import AboutMe from "../components/AboutMe.jsx";
 import SimpleHero from "../components/SimpleHero.jsx";
+import BannerCarousel from "../components/BannerCarousel.jsx";
+import imageBanner1 from "../assets/Gemini_Generated_Image_o45o7io45o7io45o.png";
+import imageBanner2 from "../assets/beconvergence-banner.png";
 
 const TECH_LOGOS = [
   { node: <SiPhp />, title: "PHP", href: "https://php.net" },
@@ -62,7 +65,9 @@ const Home = () => {
       </SimpleHero>
 
       <div className="w-full">
-        <div className="h-[100px] relative overflow-hidden">
+   
+        {/* <---LogoLoop---> */}
+        {/* <div className="h-[100px] relative overflow-hidden">
           <LogoLoop
             logos={TECH_LOGOS}
             speed={60}
@@ -75,7 +80,7 @@ const Home = () => {
             fadeOutColor="#060010"
             ariaLabel="Technology stack"
           />
-        </div>
+        </div> */}
 
         <section className="px-[3%] pb-8">
           <AboutMe />
@@ -107,6 +112,45 @@ const Home = () => {
             </p>
           </div>
           
+          <h2 className="text-2xl font-bold text-white text-left m-8">Mis proyectos destacados</h2>
+      <BannerCarousel 
+          banners={[
+            {
+              id: '3',
+              title: 'Mi portafolio',
+              description: 'Aplicando practica con react y tailwind css para crear mi propio portafolio.',
+              tags: ['React', 'Tailwind CSS'],
+              video: '/videos/6774633-uhd_3840_2160_30fps.mp4',
+              ctaButton: {
+                label: 'Ver proyecto',
+                href: 'https://github.com/jpdiaz663/jpdiaz663',
+                external: true
+              }
+            },
+            {
+              id: '1',
+              title: 'BeConvergence',
+              description: 'Es la pagina web de mi proyecto personal para emprender en el mercado de la tecnología.',
+              tags: ['Drupal', 'Pantheon', 'React'],
+              image: imageBanner2,
+            },
+            {
+              id: '2',
+              title: 'Api Gateway Symfony',
+              description: 'Aplicando practica con symfony 7 y superior integrando bundles para crear una API Gateway',
+              tags: ['Symfony', 'API Gateway'],
+              image: imageBanner1,
+              ctaButton: {
+                label: 'Ver proyecto',
+                href: 'https://github.com/juanrraider666/api-gateway-symfony',
+                external: true
+              }
+            },
+            
+              ]}
+          />
+
+      <h2 className="text-2xl font-bold text-white text-left m-8">Todos mis proyectos</h2>
           <div className="card-projects">
             <Projects projects={projects} />
           </div>
