@@ -112,7 +112,7 @@ const Home = () => {
             </p>
           </div>
           
-          <h2 className="text-2xl font-bold text-white text-left m-8">Mis proyectos destacados</h2>
+          <h2 className="text-2xl font-bold text-white text-center m-8">Mis proyectos destacados</h2>
       <BannerCarousel 
           banners={[
             {
@@ -150,7 +150,7 @@ const Home = () => {
               ]}
           />
 
-      <h2 className="text-2xl font-bold text-white text-left m-8">Todos mis proyectos</h2>
+      <h2 className="text-2xl font-bold text-white text-center m-8">Todos mis proyectos</h2>
           <div className="card-projects">
             <Projects projects={projects} />
           </div>
