@@ -9,7 +9,7 @@
 .banner-carousel-main {
   position: relative;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 13 / 9;
   overflow: hidden;
   border-radius: 0.5rem;
 }
