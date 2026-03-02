@@ -19,7 +19,7 @@ const TECH_LOGOS = [
   { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" }
 ];
 
-const buttons  = [
+const buttons = [
   { label: "Enviar email", href: "mailto:jpdiaz663@hotmail.com", external: true, className: "button button--primary" },
   { label: "Hablemos por chat", href: "https://wa.me/573138408391", external: true, className: "button button--whatsapp" },
 ]
@@ -38,7 +38,7 @@ const Home = () => {
 
   // Memoize the callback
   const handleLoadingComplete = useCallback(() => {
-      setIsLoaded(true);
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Home = () => {
 
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={handleLoadingComplete}/>}{" "}
+      {!isLoaded && <LoadingScreen onComplete={handleLoadingComplete} />}{" "}
       <Navbar />
       <SimpleHero>
         {/*<---Buttons--->*/}
@@ -61,11 +61,11 @@ const Home = () => {
             {button.label}
           </a>
         ))}
-        
+
       </SimpleHero>
 
       <div className="w-full">
-   
+
         {/* <---LogoLoop---> */}
         {/* <div className="h-[100px] relative overflow-hidden">
           <LogoLoop
@@ -101,9 +101,9 @@ const Home = () => {
               implementación de <strong>APIs y gateways</strong>, y
               <strong> optimización de despliegues</strong> en entornos cloud
               como{" "}
-              <a 
-                href="https://pantheon.io/" 
-                target="_blank" 
+              <a
+                href="https://pantheon.io/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 "
               >
@@ -111,47 +111,48 @@ const Home = () => {
               </a>.
             </p>
           </div>
-          
-          <h2 className="text-2xl font-bold text-white text-center m-8">Mis proyectos destacados</h2>
-      <BannerCarousel 
-          banners={[
-            {
-              id: '3',
-              title: 'Mi portafolio',
-              description: 'Aplicando practica con react y tailwind css para crear mi propio portafolio.',
-              tags: ['React', 'Tailwind CSS'],
-              video: '/videos/6774633-uhd_3840_2160_30fps.mp4',
-              ctaButton: {
-                label: 'Ver proyecto',
-                href: 'https://github.com/jpdiaz663/jpdiaz663',
-                external: true
-              }
-            },
-            {
-              id: '1',
-              title: 'BeConvergence',
-              description: 'Es la pagina web de mi proyecto personal para emprender en el mercado de la tecnología.',
-              tags: ['Drupal', 'Pantheon', 'React'],
-              image: imageBanner2,
-            },
-            {
-              id: '2',
-              title: 'Api Gateway Symfony',
-              description: 'Aplicando practica con symfony 7 y superior integrando bundles para crear una API Gateway',
-              tags: ['Symfony', 'API Gateway'],
-              image: imageBanner1,
-              ctaButton: {
-                label: 'Ver proyecto',
-                href: 'https://github.com/juanrraider666/api-gateway-symfony',
-                external: true
-              }
-            },
-            
-              ]}
-          />
 
-      <h2 className="text-2xl font-bold text-white text-center m-8">Todos mis proyectos</h2>
-          <div className="card-projects">
+          <h2 className="text-2xl font-bold text-white text-center m-8">Mis proyectos destacados</h2>
+          <div id="featured-projects">
+            <BannerCarousel
+              banners={[
+                {
+                  id: '3',
+                  title: 'Mi portafolio',
+                  description: 'Aplicando practica con react y tailwind css para crear mi propio portafolio.',
+                  tags: ['React', 'Tailwind CSS'],
+                  video: '/videos/6774633-uhd_3840_2160_30fps.mp4',
+                  ctaButton: {
+                    label: 'Ver proyecto',
+                    href: 'https://github.com/jpdiaz663/jpdiaz663',
+                    external: true
+                  }
+                },
+                {
+                  id: '1',
+                  title: 'BeConvergence',
+                  description: 'Es la pagina web de mi proyecto personal para emprender en el mercado de la tecnología.',
+                  tags: ['Drupal', 'Pantheon', 'React'],
+                  image: imageBanner2,
+                },
+                {
+                  id: '2',
+                  title: 'Api Gateway Symfony',
+                  description: 'Aplicando practica con symfony 7 y superior integrando bundles para crear una API Gateway',
+                  tags: ['Symfony', 'API Gateway'],
+                  image: imageBanner1,
+                  ctaButton: {
+                    label: 'Ver proyecto',
+                    href: 'https://github.com/juanrraider666/api-gateway-symfony',
+                    external: true
+                  }
+                },
+
+              ]}
+            />
+          </div>
+          <h2 className="text-2xl font-bold text-white text-center m-8">Todos mis proyectos</h2>
+          <div id="all-projects" className="card-projects">
             <Projects projects={projects} />
           </div>
         </section>
