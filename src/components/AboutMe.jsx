@@ -4,7 +4,7 @@ import MeIcons from "./base/MeIcons.jsx";
 
 const AboutMe = () => {
     return (
-        <div className='container'>
+        <div id="about" className='container'>
             <section className="text-center">
                 <ShinyText
                     text="Sobre mí"
