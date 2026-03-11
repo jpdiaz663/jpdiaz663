@@ -5,7 +5,7 @@ const Navbar = () => {
 
   const NAV_LINKS = [
     { href: "/", label: "Inicio" },
-    { href: "https://folll.io/juanpablod%C3%ADazalbarracin/resume", label: "Sobre Mí", external: true },
+    { href: "#about", label: "Sobre Mí", external: true },
     { href: "#contact", label: "Contáctame" }
   ];
 

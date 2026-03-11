@@ -82,7 +82,7 @@ const Home = () => {
           />
         </div> */}
 
-        <section className="px-[3%] pb-8">
+        <section id="about" className="px-[3%] pb-8">
           <AboutMe />
         </section>
 
