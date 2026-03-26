@@ -414,6 +414,17 @@
     --sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 body {
     @apply bg-gradient-to-br from-black via-gray-900 to-slate-800;
     font-family: var(--vp-font-family-mono, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");

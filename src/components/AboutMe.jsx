@@ -16,7 +16,7 @@ const AboutMe = () => {
 
             <div className="container--about"> 
                 <div className="description box">
-                    <h3>🔥 Pragmático</h3>
+                    <h3>Pragmático</h3>
                     <div className="content flex flex-col md:flex-row gap-6">
                         <div className="flex justify-center">
                             <MeIcons icon="standing" />
@@ -27,11 +27,11 @@ const AboutMe = () => {
                                 Estoy certificado como Ingeniero de software y especializado en seguridad informática.
                             </p>
                             <p>
-                                💻 Siempre me han interesado las mejores prácticas de programación, 
+                                Siempre me han interesado las mejores prácticas de programación, 
                                 cuestionar la forma en que se hacen las cosas y trabajar en equipo.
                             </p>
                             <p>
-                                🎨 Mi conocimiento crece gracias a los{' '}
+                                Mi conocimiento crece gracias a los{' '}
                                 <a 
                                     className="underline hover:text-yellow-400 transition-colors"
                                     href='https://github.com/juanrraider666'
