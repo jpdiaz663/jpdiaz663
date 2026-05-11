@@ -1,0 +1,9 @@
+/* Adapted from React Bits — layered behind page content via parent wrapper */
+.light-rays-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}

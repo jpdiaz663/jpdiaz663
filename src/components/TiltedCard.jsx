@@ -114,6 +114,10 @@ export default function TiltedCard({
             {overlayContent}
           </motion.div>
         )}
+
+        {showTooltip && captionText ? (
+          <p className="tilted-card-caption-mobile">{captionText}</p>
+        ) : null}
       </motion.div>
 
       {showTooltip && (

@@ -9,6 +9,7 @@ import { LogoLoop } from "../components/LogoLoop.jsx";
 import AboutMe from "../components/AboutMe.jsx";
 import SimpleHero from "../components/SimpleHero.jsx";
 import BannerCarousel from "../components/BannerCarousel.jsx";
+import LightRays from "../components/LightRays.jsx";
 import imageBanner1 from "../assets/Gemini_Generated_Image_o45o7io45o7io45o.png";
 import imageBanner2 from "../assets/beconvergence-banner.png";
 
@@ -35,6 +36,11 @@ const fetchProjects = async () => {
 const Home = () => {
   const [projects, setProjects] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   // Memoize the callback
   const handleLoadingComplete = useCallback(() => {
@@ -45,9 +51,37 @@ const Home = () => {
     fetchProjects().then(data => setProjects(data));
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onChange = () => setReduceMotion(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={handleLoadingComplete} />}{" "}
+      {!reduceMotion && (
+        <div
+          className="pointer-events-none fixed inset-0 z-0 opacity-[0.58] mix-blend-screen"
+          aria-hidden
+        >
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#f2b93a"
+            raysSpeed={0.45}
+            lightSpread={1.1}
+            rayLength={1.32}
+            followMouse
+            mouseInfluence={0.068}
+            fadeDistance={1.12}
+            saturation={1.2}
+            noiseAmount={0}
+            distortion={0}
+          />
+        </div>
+      )}
+      <div className="relative z-[1]">
       <Navbar />
       <SimpleHero>
         {/*<---Buttons--->*/}
@@ -158,6 +192,7 @@ const Home = () => {
         </section>
 
         <FooterRegion />
+      </div>
       </div>
     </>
   );

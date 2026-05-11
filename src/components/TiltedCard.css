@@ -25,10 +25,48 @@
   display: none;
 }
 
+/* Descripción móvil: panel vidrio dentro de la card — solo ≤640px */
+.tilted-card-caption-mobile {
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 640px) {
   .tilted-card-mobile-alert {
     display: block;
+  }
+  .tilted-card-caption-mobile {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: calc(100% - 1.1rem);
+    max-height: min(65%, 12rem);
+    overflow: auto;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    text-align: left;
+    font-weight: 500;
+    color: #f8fafc;
+    /* Legibilidad: sombra oscura suave */
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.75),
+      0 2px 10px rgba(0, 0, 0, 0.45);
+    /* Vidrio esmerilado */
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 6px 20px rgba(0, 0, 0, 0.18);
+    pointer-events: none;
   }
   .tilted-card-caption {
     display: none;
