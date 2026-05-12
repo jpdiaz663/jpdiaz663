@@ -58,15 +58,19 @@ export const Projects = ({ projects = [] }) => {
               overlayContent={
                 <div className="tilted-card-overlay">
                   <p className="tilted-card-demo-text">{project.name}</p>
-
                   <div className="docs-button-bar">
-                    <a
-                      target="_blank"
-                      href={project.html_url ?? project.demo}
-                      className="docs-button"
-                    >
-                      Probar
-                    </a>
+                  {project.homepage ? (
+                   
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={project.homepage}
+                        className="docs-button"
+                      >
+                        Ver
+                      </a>
+                    ) : null}
+                    
                     <a target="_blank" href={code} className="docs-button">
                       Codigo fuente
                     </a>
