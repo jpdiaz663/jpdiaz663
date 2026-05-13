@@ -21,7 +21,12 @@ const TECH_LOGOS = [
 ];
 
 const buttons = [
-  { label: "Enviar email", href: "mailto:jpdiaz663@hotmail.com", external: true, className: "button button--primary" },
+  { 
+    label: "Enviar email", 
+    href: "mailto:jpdiaz663@hotmail.com?body=Hola%2C%20me%20gustar%C3%ADa%20contactarte%20por%20medio%20de%20tu%20portafolio.", 
+    external: true, 
+    className: "button button--primary" 
+  },
   { label: "Hablemos por chat", href: "https://wa.me/573138408391", external: true, className: "button button--whatsapp" },
 ]
 
