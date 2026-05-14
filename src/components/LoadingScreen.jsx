@@ -12,7 +12,7 @@ export const LoadingScreen = ({ onComplete }) => {
     const summaries = [
       {text: "Buenas noches 🌚", from: 19, to: 24},
       {text: "Buenas tardes 🌞", from: 12, to: 18},
-      {text: "Buenos días 🌞", from: 1, to: 11},
+      {text: "Buenos días 🌞", from: 0, to: 11},
     ]
     
     const targetHour = summaries.find(summary => hour >= summary.from && hour <= summary.to)?.text;
@@ -50,7 +50,7 @@ export const LoadingScreen = ({ onComplete }) => {
       </div>
       
       <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+        <div className="w-[40%] h-full bg-orange-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
       </div>
       <div className="mt-8 text-gray-400 text-2xl">{textSummary}</div>
     </div>
