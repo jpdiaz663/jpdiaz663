@@ -30,10 +30,11 @@ const buttons = [
   { label: "Hablemos por chat", href: "https://wa.me/573138408391", external: true, className: "button button--whatsapp" },
 ]
 
-const fetchProjects = async () => {
+const fetchProjects = async (signal) => {
   try {
-    return await projectsapi({ per_page: 12 });
+    return await projectsapi({ per_page: 10, page: 1 }, { signal });
   } catch (error) {
+    if (error.name === "AbortError") throw error;
     console.error("Error fetching projects:", error);
   }
 };
@@ -53,7 +54,17 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    fetchProjects().then(data => setProjects(data));
+    const ac = new AbortController();
+    fetchProjects(ac.signal)
+      .then((data) => {
+        if (data != null) setProjects(data);
+      })
+      .catch((err) => {
+        if (err?.name !== "AbortError") {
+          console.error("Error fetching projects:", err);
+        }
+      });
+    return () => ac.abort();
   }, []);
 
   useEffect(() => {

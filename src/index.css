@@ -469,6 +469,16 @@ a {
     .animate-loading-bar {
       animation: loading 0.8s ease infinite;
     }
+
+    .loading-screen {
+      opacity: 1;
+      transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .loading-screen--exit {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   .reveal {
